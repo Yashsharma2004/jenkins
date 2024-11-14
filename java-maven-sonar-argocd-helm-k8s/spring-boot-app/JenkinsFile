@@ -16,7 +16,8 @@ pipeline {
                         userRemoteConfigs: [[url: 'https://github.com/Yashsharma2004/jenkins.git']],
                         extensions: [
                             [$class: 'CloneOption', depth: 1, shallow: true, noTags: true]
-                        ]
+                        ],
+                         retry: 5  // Increase retries
                     ])
                 }
         sh 'echo Checkout completed'
