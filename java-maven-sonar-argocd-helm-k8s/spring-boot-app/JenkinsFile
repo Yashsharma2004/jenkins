@@ -8,14 +8,17 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        // Ensure this step is active and correctly configured
-        git(
-                    url: 'https://github.com/Yashsharma2004/jenkins.git',
-                    branch: 'main',
-                    extensions: [
-                        [$class: 'CloneOption', depth: 1, noTags: false, shallow: true]
-                    ]
-                )
+        script {
+                    // Shallow clone with depth 1
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: '*/main']],
+                        userRemoteConfigs: [[url: 'https://github.com/Yashsharma2004/jenkins.git']],
+                        extensions: [
+                            [$class: 'CloneOption', depth: 1, shallow: true, noTags: true]
+                        ]
+                    ])
+                }
         sh 'echo Checkout completed'
       }
     }
