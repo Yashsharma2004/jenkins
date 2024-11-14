@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         // Ensure this step is active and correctly configured
-        git branch: 'main', url: 'https://github.com/Yashsharma2004/jenkins.git'
+        git url: 'https://github.com/Yashsharma2004/jenkins.git', depth: 1 // shallow clone
         sh 'echo Checkout completed'
       }
     }
