@@ -19,7 +19,11 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
+<<<<<<< HEAD
         image: myregistry/spring-boot-app:latest  # Ensure this is correct
+=======
+        image:  16
+>>>>>>> ee325ed4152787582b1aa4591cfaa1f3f7878734
         ports:
         - containerPort: 8080
         resources:  # Optional: Add or modify resource limits and requests
