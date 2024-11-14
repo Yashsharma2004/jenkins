@@ -4,11 +4,8 @@ metadata:
   name: spring-boot-app
   labels:
     app: spring-boot-app
-    version: "1.0"  # Toggle this value for harmless changes
-  annotations:
-    last-updated: "2024-11-14"  # Update this date to trigger changes
 spec:
-  replicas: 3  # Change between different values for testing
+  replicas: 3
   selector:
     matchLabels:
       app: spring-boot-app
@@ -19,18 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-<<<<<<< HEAD
-        image: myregistry/spring-boot-app:latest  # Ensure this is correct
-=======
-        image:  16
->>>>>>> ee325ed4152787582b1aa4591cfaa1f3f7878734
+        image:  myregistry/spring-boot-app:latest
         ports:
         - containerPort: 8080
-        resources:  # Optional: Add or modify resource limits and requests
-          requests:
-            memory: "256Mi"
-            cpu: "500m"
-          limits:
-            memory: "512Mi"
-            cpu: "1"
-
