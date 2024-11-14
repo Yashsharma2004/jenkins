@@ -1,0 +1,15 @@
+# Ignore target directory created by Maven
+target/
+
+# Ignore IDE-specific files (example: IntelliJ IDEA)
+.idea/
+
+# Ignore Eclipse specific files
+.project
+.classpath
+
+# Ignore log files
+*.log
+
+# Ignore OS-specific files (example: macOS)
+.DS_Store
