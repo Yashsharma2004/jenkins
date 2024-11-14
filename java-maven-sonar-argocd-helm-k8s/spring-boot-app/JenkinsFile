@@ -8,19 +8,8 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        script {
-                    // Shallow clone with depth 1
-                    checkout([
-                        $class: 'GitSCM',
-                        branches: [[name: '*/main']],
-                        userRemoteConfigs: [[url: 'https://github.com/Yashsharma2004/jenkins.git']],
-                        extensions: [
-                            [$class: 'CloneOption', depth: 1, shallow: true, noTags: true]
-                        ],
-                         retry: 5  // Increase retries
-                    ])
-                }
-        sh 'echo Checkout completed'
+        sh 'echo passed'
+        //git branch: 'main', url: 'https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git'
       }
     }
     stage('Build and Test') {
